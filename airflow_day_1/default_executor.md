@@ -6,32 +6,33 @@ docker exec -it {containerId} /bin/bash
 ```bash
 grep executor airflow.cfg 
 ```
+The executor class that airflow should use. Choices include full import path to the class when using a custom executor.
+start with the elements of the list (e.g: "scheduler,executor,dagrun")
+The number of seconds to wait before timing out ``send_task_to_executor`` or
 
 ```bash
-# The executor class that airflow should use. Choices include
-# full import path to the class when using a custom executor.
 executor = SequentialExecutor
-# start with the elements of the list (e.g: "scheduler,executor,dagrun")
 [celery_kubernetes_executor]
 celery_app_name = airflow.executors.celery_executor
-# The number of seconds to wait before timing out ``send_task_to_executor`` or
 ```
 
+## Defaul Alchemy
 ```bash
 grep sql_alchemy_conn airflow.cfg 
 ```
 
-
+### Response from the config file
 ```bash
 sql_alchemy_conn = sqlite:////usr/local/airflow/airflow.db
 # sql_alchemy_connect_args =
 ```
 
+## Defaul smtp server which can be modified
 ```bash
  grep smtp airflow.cfg 
  ```
 
-# smtp server here
+### Response from the config file
 ```bash
 smtp_host = localhost
 smtp_starttls = True
