@@ -16,23 +16,23 @@ executor = SequentialExecutor
 celery_app_name = airflow.executors.celery_executor
 ```
 
-## Defaul Alchemy
+Default Alchemy
 ```bash
 grep sql_alchemy_conn airflow.cfg 
 ```
 
-### Response from the config file
+Response from the config file
 ```bash
 sql_alchemy_conn = sqlite:////usr/local/airflow/airflow.db
 # sql_alchemy_connect_args =
 ```
 
-## Defaul smtp server which can be modified
+Default smtp server which can be modified
 ```bash
  grep smtp airflow.cfg 
  ```
 
-### Response from the config file
+Response from the config file
 ```bash
 smtp_host = localhost
 smtp_starttls = True
